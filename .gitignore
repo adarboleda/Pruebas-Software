@@ -1,0 +1,29 @@
+# Dependencias
+node_modules/
+pnpm-lock.yaml
+yarn-error.log
+
+# Testing
+coverage/
+
+# Producción / Build (si usas TypeScript o frameworks de frontend)
+build/
+dist/
+
+# Variables de entorno (¡MUY IMPORTANTE!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de sistema operativo (Mac/Windows)
+.DS_Store
+Thumbs.db
