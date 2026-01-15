@@ -4,7 +4,7 @@ import { check, sleep } from 'k6';
 export let options = {
   stages: [
     { duration: '10s', target: 10 }, // Subir a 10 usuarios en 10 segundos
-    { duration: '30s', target: 50 }, // Mantener 50 usuarios por 30 segundos
+    { duration: '30s', target: 300 }, // Mantener 300 usuarios por 30 segundos
     { duration: '10s', target: 0 }, // Bajar a 0 usuarios en 10 segundos
   ],
 
