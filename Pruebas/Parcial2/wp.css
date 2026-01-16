@@ -1,0 +1,292 @@
+/* =========================================
+   CSS FINAL V5 - MYSMARTLIFETECH
+   (Todo arreglado + Galería Centrada)
+========================================= */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: clip !important;
+  overflow-y: auto !important;
+}
+
+/* === REGLAS PARA CELULARES (Menos de 768px) === */
+@media only screen and (max-width: 768px) {
+  /* 1. ARREGLO DE BORDES BLANCOS (Fondo completo) */
+  .alignfull,
+  .wp-block-group.alignfull {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .alignfull > .wp-block-group,
+  .alignwide {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    box-sizing: border-box;
+  }
+
+  /* 2. SOLUCIÓN HERO (INICIO): PILA Y CENTRADO */
+  .hostinger-ai-hero-1 .wp-block-group {
+    flex-direction: column !important;
+    flex-wrap: wrap !important;
+  }
+
+  .hostinger-ai-hero-1 .wp-block-group > .wp-block-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 30px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* 3. *** ARREGLO GLOBAL DE IMÁGENES (GALERÍA) *** */
+  /* Esto centra CUALQUIER imagen dentro de columnas o grupos en el celular */
+
+  .wp-block-column figure.wp-block-image,
+  .wp-block-group figure.wp-block-image,
+  figure.wp-block-image {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: table !important; /* Truco para forzar centrado de bloque */
+    text-align: center !important;
+  }
+
+  .wp-block-image img {
+    margin: 0 auto !important;
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Corrección específica para el Hero (para que no pierda su estilo) */
+  .hostinger-ai-hero-1 figure.wp-block-image,
+  .hostinger-ai-hero-1 figure.wp-block-image img {
+    width: 100% !important;
+    border-radius: 20px !important;
+  }
+
+  /* 4. TIPOGRAFÍA Y ESPACIADO (CORREGIDO) */
+  h1,
+  h1.hostinger-ai-title,
+  .wp-block-post-title {
+    font-size: 24px !important; /* REDUCIDO de 36px a 24px */
+    text-align: center !important;
+    line-height: 1.2 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-bottom: 20px !important; /* Un poco menos de espacio */
+    width: 100% !important;
+    word-wrap: break-word !important; /* Evita que se salga de la pantalla */
+  }
+
+  h2,
+  h2.wp-block-heading,
+  h2.hostinger-ai-title {
+    text-align: center !important;
+    font-size: 28px !important;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+  }
+
+  p,
+  p.hostinger-ai-description {
+    text-align: center !important;
+    font-size: 18px !important;
+  }
+
+  .wp-block-buttons {
+    justify-content: center !important;
+    display: flex !important;
+    width: 100% !important;
+  }
+}
+/* --- 1. RESET Y STICKY (Eliminando espacios externos) --- */
+header.wp-block-template-part {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 0 !important;
+  z-index: 999 !important;
+  background-color: #ffffff !important;
+  margin-top: 0 !important; /* Fuerza margen 0 arriba */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05) !important; /* Sombra sutil */
+}
+
+/* Asegura que la página no tenga margen superior extraño */
+body {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* --- 2. CONTROL DEL GROSOR (Padding Interno) --- */
+/* Aquí controlas la altura de la barra blanca */
+header.wp-block-template-part > .wp-block-group {
+  padding-top: 10px !important; /* Espacio blanco encima del texto */
+  padding-bottom: 10px !important; /* Espacio blanco debajo del texto */
+}
+
+/* --- 3. LIMPIEZA DEL TÍTULO --- */
+/* A veces el título trae margen propio, esto lo elimina */
+.wp-block-site-title {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* --- 4. AJUSTES PARA CELULARES --- */
+@media (max-width: 780px) {
+  .wp-block-site-title a {
+    font-size: 20px !important;
+    line-height: 1 !important;
+  }
+
+  header .wp-block-group .wp-block-group {
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+    align-items: center;
+  }
+}
+/* === PARCHE FINAL PARA QUE EL HEADER FUNCIONE EN ENTRADAS === */
+.wp-site-blocks,
+body,
+html {
+  overflow-x: clip !important; /* Mantiene el sitio seguro horizontalmente */
+  overflow-y: visible !important; /* Permite que el sticky funcione verticalmente */
+}
+
+/* Forzar alineación del menú en entradas */
+header.wp-block-template-part > .wp-block-group {
+  align-items: center !important; /* Centra verticalmente logo y menú */
+}
+
+/* =========================================
+   ARREGLO DEFINITIVO TABLA JBL
+   ========================================= */
+
+/* 1. MÓVIL: Transformación a Tarjetas (Cards) */
+@media (max-width: 768px) {
+  /* Ocultar encabezados de la tabla original */
+  .tabla-jbl-final thead {
+    display: none !important;
+  }
+
+  /* Convertir tabla en bloques */
+  .tabla-jbl-final table,
+  .tabla-jbl-final tbody,
+  .tabla-jbl-final tr,
+  .tabla-jbl-final td {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Estilo de la "Tarjeta" */
+  .tabla-jbl-final tr {
+    background: #fff !important;
+    margin-bottom: 20px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+    padding: 15px !important;
+    overflow: hidden !important; /* Evita desbordes */
+  }
+
+  /* Estilo de cada fila dentro de la tarjeta */
+  .tabla-jbl-final td {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    text-align: right !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+    padding: 12px 0 !important;
+    font-size: 15px !important;
+  }
+
+  .tabla-jbl-final td:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Poner los títulos a la izquierda automáticamente */
+  .tabla-jbl-final td::before {
+    content: attr(data-label); /* Lee la etiqueta del HTML */
+    font-weight: 700 !important;
+    color: #333 !important;
+    text-transform: uppercase;
+    font-size: 12px !important;
+    margin-right: 15px !important;
+    text-align: left !important;
+  }
+}
+
+/* 2. PC/DESKTOP: Arreglar anchos y alineación */
+@media (min-width: 769px) {
+  .tabla-jbl-final table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    table-layout: fixed !important; /* Fuerza columnas iguales */
+  }
+
+  .tabla-jbl-final th {
+    background-color: #f8f9fa !important;
+    color: #222 !important;
+    padding: 15px !important;
+    font-size: 14px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-bottom: 2px solid #ddd !important;
+    word-wrap: break-word !important; /* Evita que el texto se monte */
+  }
+
+  .tabla-jbl-final td {
+    padding: 15px !important;
+    border-bottom: 1px solid #eee !important;
+    font-size: 15px !important;
+    vertical-align: middle !important;
+  }
+}
+/* =========================================
+   CORRECCIÓN DE LECTURA (Texto a la izquierda)
+   ========================================= */
+@media (max-width: 768px) {
+  /* Esto fuerza a que los párrafos de tus entradas se alineen a la izquierda */
+  .entry-content p,
+  .wp-block-post-content p,
+  .wp-block-paragraph {
+    text-align: left !important;
+    padding-left: 5px !important; /* Un pequeño margen para que no se pegue al borde */
+    padding-right: 5px !important;
+  }
+
+  /* Opcional: Si quieres que también las listas (puntos) se alineen a la izquierda */
+  .entry-content ul,
+  .entry-content ol,
+  .wp-block-list {
+    text-align: left !important;
+  }
+}
+/*=========================================
+   OCULTAR PRECIOS (VERSIÓN AGRESIVA)
+   ========================================= */
+
+.wp-block-hostinger-affiliate-plugin [class*='price'],
+.wp-block-hostinger-affiliate-plugin [class*='precio'],
+.hap-product-card__price,
+.hap-price,
+.product-price {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 2. Por si acaso es un texto suelto justo antes del botón */
+.wp-block-hostinger-affiliate-plugin .hap-product-card__content > div:not([class]),
+.wp-block-hostinger-affiliate-plugin .hap-product-card__footer > span {
+  display: none !important;
+}

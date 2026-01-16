@@ -1,0 +1,17 @@
+<h1>Evaluación Segundo Parcial</h1>
+<form>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" value="Javier">
+  <br>
+  <label for="nota1">Nota 1:</label>
+  <input type="number" id="nota1" name="nota1" [(ngModel)]="nota1" value="4">
+  <br>
+  <label for="nota2">Nota 2:</label>
+  <input type="number" id="nota2" name="nota2" [(ngModel)]="nota2" value="7">
+  <br>
+  <label for="comentarios">Comentarios:</label>
+  <textarea id="comentarios" name="comentarios" [(ngModel)]="comentarios">Universidad de las Fuerzas Armadas ESPE sede</textarea>
+  <br>
+  <button type="button" (click)="dado()">Lanzar Dado</button>
+  <p *ngIf="resultadoDado">{{ resultadoDado }}</p>
+</form>

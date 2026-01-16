@@ -1,0 +1,24 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "examen Sanchez Angelo",
+  "license": "ISC",
+  "author": "Angelo Sanchez",
+  "type": "commonjs",
+  "main": "eslint.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "eslint": "^9.27.0",
+    "jest": "^29.7.0",
+    "supertest": "^7.1.1"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "lint": "^0.8.19"
+  }
+}
