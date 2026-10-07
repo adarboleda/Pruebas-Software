@@ -27,3 +27,6 @@ yarn-error.log*
 # Archivos de sistema operativo (Mac/Windows)
 .DS_Store
 Thumbs.db
+
+# Archivos comprimidos grandes
+3p/TercerParcial.zip
